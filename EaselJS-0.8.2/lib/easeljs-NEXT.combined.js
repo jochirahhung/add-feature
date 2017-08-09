@@ -4507,6 +4507,18 @@ this.createjs = this.createjs||{};
 		return this.append(new G.PolyStar(x, y, radius, sides, pointSize, angle));
 	};
 
+	p.drawTriangle = function(x,y,width){
+		return this.append(new G.PolyStar(x, y, width, 3, 0, -90));
+	}
+
+	p.drawHexagon = function(x,y,width){
+		return this.append(new G.PolyStar(x, y, width, 6, 0, 0));
+	}
+
+	p.drawOctagon = function(x,y,width){
+		return this.append(new G.PolyStar(x, y, width, 8, 0, 0));
+	}
+
 	// TODO: deprecated.
 	/**
 	 * Removed in favour of using custom command objects with {{#crossLink "Graphics/append"}}{{/crossLink}}.
