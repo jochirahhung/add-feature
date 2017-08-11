@@ -7,8 +7,9 @@ function init(){
     // circle.graphics.beginFill("Crimson").drawCircle(0,50,50);
     tri.graphics.beginFill("#0000ff").drawTriangle(50,100,50);
     hex.graphics.beginFill("#ff0000").drawHexagon(150,100,50);
-    oct.graphics.drawOctagon(250,100,50);
-    oct.graphics.beginImageFill("./12d.jpg", 50, 50, stage, oct);
+    oct.graphics.beginImageFill(oct, "https://www.textures.com/system/categories/256/frontend-large.jpg", stage);
+    oct.graphics.drawOctagon(400,500,150);
+    stage.update();
     circle.x = 100;
     circle.y = 100;
     stage.addChild(circle);

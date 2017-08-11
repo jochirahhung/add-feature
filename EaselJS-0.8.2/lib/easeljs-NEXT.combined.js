@@ -4151,23 +4151,6 @@ this.createjs = this.createjs||{};
 		return this._setFill(color ? new G.Fill(color) : null);
 	};
 
-	p.beginImageFill = function(image, width, height, stageCanvas, shape) {
-		var img = document.createElement("img");
-		img.crossOrigin = "Anonymous";
-		img.src = image;
-		img.onload = function() {
-			var x = (stageCanvas.canvas.width - width) % 2;
-			var y = (stageCanvas.canvas.height - height) % 2;
-
-			var m = new createjs.Matrix2D();
-			m.translate(x, y);
-			m.scale(width/img.width, height/img.height);
-			shape.graphics.beginStroke("black").beginBitmapFill(img, "no-repeat", m);
-			stageCanvas.update();
-		};
-		return img;
-	};
-
 	/**
 	 * Begins a linear gradient fill defined by the line (x0, y0) to (x1, y1). This ends the current sub-path. For
 	 * example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a
@@ -4233,6 +4216,13 @@ this.createjs = this.createjs||{};
 	 **/
 	p.beginBitmapFill = function(image, repetition, matrix) {
 		return this._setFill(new G.Fill(null,matrix).bitmap(image, repetition));
+	};
+
+	p.beginImageFill = function(shape, img, stage) {
+		var image = document.createElement("img");
+		image.src = img;
+		image.onload;
+		shape.graphics.beginBitmapFill(image, null);
 	};
 
 	/**
