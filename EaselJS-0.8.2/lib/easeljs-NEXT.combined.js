@@ -4218,10 +4218,9 @@ this.createjs = this.createjs||{};
 		return this._setFill(new G.Fill(null,matrix).bitmap(image, repetition));
 	};
 
-	p.beginImageFill = function(shape, img, stage) {
+	p.beginImageFill = function(shape, img) {
 		var image = document.createElement("img");
 		image.src = img;
-		image.onload;
 		shape.graphics.beginBitmapFill(image, null);
 	};
 
